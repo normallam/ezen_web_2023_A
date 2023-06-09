@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.booking{
+	width:300px;		/* 이미지 가로 사이즈 */
+
+}
+
+.titleno{
+	font-size: 30px; 	
+	color:orange;
+	
+}
+
+.content{
+	background-color: #0F6878;
+	color: white;			/*글꼴색*/
+	padding: 20px;			/*안쪽여백*/
+	width:500px;		
+}
+
+.fontc{
+	color: orange; 	/*글꼴색*/
+	
+}
