@@ -2,54 +2,86 @@
 /* css 기본값 제거  */
 *{padding: 0px; margin:0px;}/*기본 여백 제거*/
 li{list-style-type: none;} /*글머리 제거  */
+/*----------------스튜디오 예약 --------------- */
+#reservation{
+	width: 800px; height: 700px;
+	display: flex;
+	margin:0 auto;
+}
+
+.re_schedule{
+	width:800px; height:600px;
+	text-align: center;
+	background-color: #FCF9EA;
+	
+}
+
+.re_date{
+	width:500px; height:400px;
+}
+.re_number{
+	width: 520px; height:460px;
+	border: 1px solid black;
+}
+
+.rest_day{
+	color:red;
+}
+.re_inf li{
+	list-style-type: inherit;
+}
 
 
 
 
-/* 푸터  */
+
+
+
+
+
+/*---------------- 푸터 시작----------------*/
 #footer{
  background-color: #292C32;
 	width: 100%;
 	margin-top: 20px;
 	display: flex;
+	padding-bottom: 40px;
 }
-
+/*------푸터 본문-------*/
 .ft_context{
 	width: 800px;
 	display: flex;
 	margin: 0 auto;
+	padding-top: 30px;
 }
-
+.ft_call{
+	font-size: 15px;
+	padding-bottom: 10px;
+}
+/*------푸터 좌측배너-------*/
 .ft_left{
-	color:white; padding: 30px;	
+	width: 200px;
+	color:white;	
 	font-size: 20px;
 }
+.ft_left h3{ color:#F4E4E4;}
 
+/*------푸터 우측배너-------*/
+.ft_right{width: 100px;
+display:flex;}
+
+/*------푸터 가운데배너-------*/
 .ft_center{
 	color:white;
 	align-items: center;
-}
-
-.ft_right{
-	align-items:center;
+	margin-right: 100px;
+	margin-left: 100px;
 }
 .ft_top{
 	margin-bottom: 20px;
+	font-size: 11px;
 }
-
-
-.ft_left h1{
-	margin-top: 10px; 
-	margin-bottom: 5px;
-}
-
-
-.ft_bottom{
-	margin-top: 10px;	
-	
-}
-.ft_right{
-	display:flex;
-}
+.ft_bottom{margin-top: 10px;}
+.ft_bot{ font-size: 11px;}
 #footer a{color: white; text-decoration: none;}
 .aline{font-size: 5px; color: #e8e8e8;}
