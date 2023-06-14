@@ -7,28 +7,71 @@ li{list-style-type: none;} /*글머리 제거  */
 	width: 800px; height: 700px;
 	display: flex;
 	margin:0 auto;
+	padding-top: 50px;
 }
 
 .re_schedule{
-	width:800px; height:600px;
+	width:600px; height:600px;
 	text-align: center;
 	background-color: #FCF9EA;
-	
+}
+
+.re_schedule h5{ margin-top: 15px;
+font-size: 13px;
+font-weight: normal;}
+.button_top{
+	border: none;
+	background-color: #FCF9EA;
+	margin-bottom: 15px;
 }
 
 .re_date{
 	width:500px; height:400px;
 }
+	
 .re_number{
 	width: 520px; height:460px;
 	border: 1px solid black;
-}
+	}
 
+
+.re_number th{
+	font-size: 10px;
+}
+.re_number td{
+	font-size: 8px;
+	text-align: left;
+}
 .rest_day{
 	color:red;
 }
+
+.re_inf {padding-left: 20px;}
+
 .re_inf li{
 	list-style-type: inherit;
+}
+
+.re_inf h5{
+	border-left: 6px solid black;
+	font-size: 20px;
+	padding-left: 15px;
+	margin-top: 15px;
+}
+
+.re_text{
+	font-size: 5px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding-left: 10px;
+}
+
+.re_text li{margin-bottom: 10px;}
+
+.green_text{
+	color:#2E9945;
+	font-weight: bold;
+	list-style-type: none;
 }
 
 
