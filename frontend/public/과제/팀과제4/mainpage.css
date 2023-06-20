@@ -1,15 +1,15 @@
-@charset "EUC-KR";
-/* °øÅë ºÎ¹® */
+@charset "UTF-8";
+/* ê³µí†µ ë¶€ë¬¸ */
 *{ padding: 0px; margin: 0px; font-size: 12px;}
 
-/* a ±âº»°ª Á¦°Å  */
+/* a ê¸°ë³¸ê°’ ì œê±°  */
 a{ color: black; text-decoration: none;}
-/* ±Û¸Ó¸®*/
+/* ê¸€ë¨¸ë¦¬*/
 li{ list-style-type: none;}
-/* À¥ÆùÆ® */
+/* ì›¹í°íŠ¸ */
 
 
-/*--------------------------¸ŞÀÎÆäÀÌÁö-------------------------*/
+/*--------------------------ë©”ì¸í˜ì´ì§€-------------------------*/
 
 .mainpage_top{
 	display:flex;
@@ -26,7 +26,7 @@ li{ list-style-type: none;}
 }
 
 
-/*-------------------¸ŞÀÎÆäÀÌÁö ³»¿ë-------------------  */
+/*-------------------ë©”ì¸í˜ì´ì§€ ë‚´ìš©-------------------  */
 .mainpage_note{
 	font-size: 17px;
     font-weight: bold;
@@ -35,7 +35,7 @@ li{ list-style-type: none;}
     justify-content: center;
 }
 .mainpage_note h3{
-	font-family: 'Noto Serif','NanumGothic','Open Sans','PT Sans','malgun gothic','µ¸¿ò',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
+	font-family: 'Noto Serif','NanumGothic','Open Sans','PT Sans','malgun gothic','ë‹ì›€',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
     font-size: 17px;
     font-weight: 400;
     padding-bottom: 20px;}
@@ -43,7 +43,7 @@ li{ list-style-type: none;}
 	width:15px;
  }
 
-/*-----------------¸ŞÀÎÆäÀÌÁö Á¦Ç°µé------------------- */
+/*-----------------ë©”ì¸í˜ì´ì§€ ì œí’ˆë“¤------------------- */
 .mainpage_items{
 	width:1200px;
 	flex-wrap: wrap;
