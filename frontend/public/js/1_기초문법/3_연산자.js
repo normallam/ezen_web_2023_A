@@ -225,6 +225,20 @@ console.log('세 정수중 가장 큰수 : ' + max)
 let value1 = Number(prompt('정수1:'))
 let value2 = Number(prompt('정수2:'))
 let value3 = Number(prompt('정수3:'))
+
+console.log('두 정수 중 더 큰 수:' + (value1>value2 ? value1 : value2));
+console.log('두 정수 중 더 큰 수:' + (value2>value3 ? value2 : value3));
+console.log('두 정수 중 더 큰 수:' + (value3>value1 ? value3 : value1));
+
+
+
+value4 = value1 < value2 ? value2 : value1
+
+ 
+
+
+
+console.log('정수1:')
    
    
    문제12 : [ 가위바위보 게임 ] 
