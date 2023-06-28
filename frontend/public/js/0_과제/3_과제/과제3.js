@@ -136,7 +136,7 @@ function 등록(){ 	console.log('등록함수 클릭');
 	let money = moneyInput.value;	console.log( money )
 	
 	// * 유효성검사 : 만약에 3가지중에 하나라도 공백이면 
-	if( date == '' || name == '' || money == ''  ){
+	if( date == '' || name == '' || money == ''  ){ 
 		alert(' 미입력이 존재합니다. [등록불가] ');
 		return; // 함수 강제종료 // return 실행되면 아래 코드는 실행x
 	}
@@ -157,7 +157,7 @@ function 등록(){ 	console.log('등록함수 클릭');
 
 function 출력(){ console.log('가계부목록 출력합니다.');
 	// 1. 어디에 출력할껀지??? table 가져오기 
-	let outputTable = document.querySelector('.outputTable')
+	let outputTalbe = document.querySelector('.outputTalbe')
 	// 2. 무엇을???? 
 	let html = `<tr> <th> 날짜 </th> <th> 항목 </th> <th> 가격 </th> <th> 비고 </th> </tr>`
 				
@@ -186,7 +186,7 @@ function 출력(){ console.log('가계부목록 출력합니다.');
 				<td colspan="2" > ${ 총합계.toLocaleString() }원</td>
 			<tr>`
 	// 3. table 에 HTML  넣어주기  <table> inner </table>
-	outputTable.innerHTML = html ;
+	outputTalbe.innerHTML = html ;
 } // f end 
 
 // 3. 
@@ -198,3 +198,9 @@ function 삭제( 삭제할인덱스번호 ){
 	// 화면/테이블 업데이트/새로고침
 	출력()
 }
+ 
+ 
+ 
+ 
+ 
+ 
