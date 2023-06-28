@@ -1,1 +1,45 @@
 @charset "EUC-KR";
+
+body {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.input {
+  margin-bottom: 10px;
+}
+
+.input.date,
+.input.name,
+.input.money {
+  width: 300px;
+  padding: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #3366CC; /* ÆÄ¶õ»ö Åæ */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.outputTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.outputTable th,
+.outputTable td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #3366CC; /* ÆÄ¶õ»ö Åæ */
+}
+
+.outputTable th {
+  background-color: #3366CC; /* ÆÄ¶õ»ö Åæ */
+  color: white;
+}

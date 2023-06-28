@@ -157,7 +157,7 @@ function 등록(){ 	console.log('등록함수 클릭');
 
 function 출력(){ console.log('가계부목록 출력합니다.');
 	// 1. 어디에 출력할껀지??? table 가져오기 
-	let outputTalbe = document.querySelector('.outputTalbe')
+	let outputTable = document.querySelector('.outputTable')
 	// 2. 무엇을???? 
 	let html = `<tr> <th> 날짜 </th> <th> 항목 </th> <th> 가격 </th> <th> 비고 </th> </tr>`
 				
@@ -186,7 +186,7 @@ function 출력(){ console.log('가계부목록 출력합니다.');
 				<td colspan="2" > ${ 총합계.toLocaleString() }원</td>
 			<tr>`
 	// 3. table 에 HTML  넣어주기  <table> inner </table>
-	outputTalbe.innerHTML = html ;
+	outputTable.innerHTML = html ;
 } // f end 
 
 // 3. 
