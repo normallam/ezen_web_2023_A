@@ -1,29 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-<link href="����3.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="과제3.css" rel="stylesheet">
 </head>
 <body>
-<!-- ��� HTML -->
-	<div class="body">
-		<input class="input date" 	id="dateInput" type="date" /> <br/>
-		<input class="input name" 	id="nameInput" type="text" placeholder="�׸�" /> <br/>
-		<input class="input money" 	id="moneyInput" type="text" placeholder="�ݾ�" /> <br/>
-		<button onclick="���()">���</button>
-	</div>
-	
-	<!-- ��� HTML -->
+
+	<div id="wrap"> <!-- 웹페이지 전체구역 -->
+		<div class="input_area">
+			<h3 class="title">가계부작성하기</h3>
+			<form id="form">
+				<div class="input">
+				날짜 : <input class="dateitem input date" id="dateInput" type="date"/>
+				</div>
+				<div class="input">
+				항목 : <input class="listitem input name" id="nameInput" type="text"  placeholder="항목"/>
+				</div>
+				<div class="input">
+				금액 : <input class="priceitem input money" id="moneyInput" type="text" placeholder="금액" />
+				</div>
+				<div class="input">
+					<button type="button" onclick="등록()" class="btn_input">입력하기</button>
+				</div>
+			</form>
+		</div>
+		<div>
+			<table class="outputTable" border="1">
+				<!-- 등록할때마다 고정 -->
+				<tr>
+					<th>날짜</th>
+					<th>항목</th>
+					<th>금액</th>
+					<th>비고</th>
+				</tr>
+			</table>
+		</div>
+		
+	</div>	<!-- 웹페이지 전체구역 end-->
+		
+	<!-- 
+
 	<div>
 		<table class="outputTable" border="1">
-			<!-- innerHTML -->
+			등록할때마다 고정
+			<tr>
+				<th>날짜</th>
+				<th>항목</th>
+				<th>금액</th>
+				<th>비고</th>
+			</tr>
+			등록할때마다 tr 추가 = 반복문
+			<tr>
+				<td>1241531</td>
+				<td>콜라</td>
+				<td>1000</td>
+				<td><button>삭제</button></td>
+			</tr> 
 		</table>
-	</div>
-
-	<script src="����3.js" type="text/javascript">
-	</script>
-
-<script src="����3.js" type="text/javascript"></script>
+	</div>  -->
+	<script src="과제3.js" type="text/javascript"></script>
 </body>
 </html>

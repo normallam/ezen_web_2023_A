@@ -49,9 +49,34 @@ function 등록(){console.log('등록함수 클릭');
 
 function 출력(){console.log('가계부목록 출력합니다.');
 	//1. 어디에 출력할껀지?? table 가져오기
+	let outputTable = document.querySelector('.outputTable')
+	//2. 무엇을???
+	let html = `<tr> <th> 날짜 </th> <th> 항목 </th> <th> 가격 </th><th> 비고 </th> </tr>`
+	
+	for(let 인덱스=0 ; 인덱스<날짜배열.length; 인덱스++ ){
+		html += `<tr>
+					<td> ${날짜배열[인덱스]} </td>
+					<td> ${항목배열[인덱스]} </td>
+					<td> ${Number(금액배열[인덱스]).toLocaleString()}원 </td>
+					<td> <button onclick="삭제(${인덱스})">삭제</button> </td>
+		
+		
+		
+				</tr>	`
+		
+		
+		
+		
+		
+	}
 
+	let 총합계 =0;
+	for(let i =0 ;인덱스<금액배열.length ; 인덱스 ++){
+		console.log(인덱스);
+		console.log(금액배열[인덱스]);
+		총합계 += Number(금액배열[인덱스]);
 
-
+	}
 
 
 
