@@ -18,6 +18,7 @@ else if(id_sign_up.length<8||pw_sign_up.length<8){alert('[회원가입 실패]')
 else{alert('[회원가입 성공]')}
 
 아이디배열.push( id_sign_up );
+비밀번호배열.push( pw_sign_up );
 
 document.querySelector('.id_sign_up').value=``
 document.querySelector('.pw_sign_up').value=``
@@ -35,7 +36,7 @@ let pw_sign_in = 로그인비밀번호.value; console.log(pw_sign_in);
 		
 	for( let i = 0; i < 아이디배열.length ; i++ ){
 	if( 아이디배열[i] == 로그인아이디.value && 비밀번호배열[i] == 로그인비밀번호.value ){ alert('[로그인 성공]')}
-	else{alert('[로그인 실패]') }}
+	else{alert('[로그인 실패]'); break; }}
 
 
 document.querySelector('.id_sign_in').value=``

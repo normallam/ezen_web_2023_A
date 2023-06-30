@@ -179,7 +179,7 @@ function 출력(){ // 출력함수 s
 	// 2. table 에 HTML 넣어주기 <table> inner </table>
 	outputTable.innerHTML = html;
 	
-} // 출력함수 e
+} // 출력함수 
 
 function 삭제( 삭제할인덱스번호 ){
 	console.log( '삭제할인덱스번호 : ' + 삭제할인덱스번호 )

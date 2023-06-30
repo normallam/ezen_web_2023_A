@@ -90,7 +90,31 @@ function 출력(){console.log('가계부목록 출력합니다.');
 
 
 
+/*
+css
+배경 ->
+.main_img1 img {
+    width: 100%;
+    height: 400px;
+    background-image: url(img/main_img1(resize).jpg);
+    background-size: cover;
+    background-position: center;
 
+
+제목 -> text-align: item
+
+
+
+
+
+border: none;
+    border-bottom: solid 3px #eeeeee;
+    margin-top: 30px;
+
+
+
+
+*/
 
 
 
