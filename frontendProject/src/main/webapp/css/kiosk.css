@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+/*키오스크 전체구역  */
+.kioskwrap{
+	font-family:'KOTRAHOPE';
+	width: 700px;	
+	margin: 50px auto;
+	
+}
+/*헤더 구역 이미지  */
+.himg{
+	width: 100%;
+	object-fit : cover; /*비율 맞춤 but 이미지가 짤림  */
+	
+}
+/*카데고리  */
+.categorymenu{
+	display: flex; 
+	justify-content: space-around; /* 가로 배치 방법  */
+	padding-top: 2px;
+}
+
+/* 선택 안된 카테고리  */
+.categorymenu li{
+	color:#8e8e8e; }
+/* 선택/클릭된 카테고리  */
+.categoryselect{
+	color:red !important; /* 위에서 이미 color 속성 사용했으므로 중복!  */
+	/* 1. id 별도로 해서 속성적용 2. style속성 3.!important  */
+	border-bottom: 3px solid red;
+	padding-bottom: 3px;
+}
+
+/*제품들 출력 구역  */
+.productbox{
+	height: 450px; /* height 생략시 기본값 auto: 내용물 크기만 자동으로 늘어감  */	
+	display: flex; flex-wrap: wrap;
+	overflow-y: scroll;/*만약에 자식요소들이 현재 구역보다 더 커지면 세로 스크롤 생성 */
+}
+/*제품 1개  */
+	/* 전체 가로사이즈 : width: 700px; / 가로당 제품수  */
+.product{width:30%; text-align: center;	margin: 5px 10px 30px 10px }
+.product img{width:100%}
+.product .pprice{color: red;}
+
+/*카트 출력 구역  */
+.cartbox{
+	height: 250px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
