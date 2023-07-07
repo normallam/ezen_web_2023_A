@@ -86,8 +86,8 @@ function onWrite(){
 	localStorage.setItem( 'boardList' , JSON.stringify( boardList )  )
 		// 5. 글쓰기 성공 했으면 페이지 전환
 	alert('글쓰기 성공');
-			// HTML : <a href="경로"> </a>
-			// JS : location.href="경로"
+			// HTML : <a href="경로"> </a> ->> 페이지 전환 
+			// JS : location.href="경로" -> 스크립트에서 페이지전환
 		location.href = 'list.jsp'
 		
 	//////////////////// --- 예 /////////////////////////////

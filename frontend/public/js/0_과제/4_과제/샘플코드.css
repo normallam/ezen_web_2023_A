@@ -1,0 +1,62 @@
+@charset "UTF-8";
+.Reservation{
+	display: flex;
+	border: 2px solid black;
+	width: 1200px;
+	height: 500px;
+}
+
+.R_Movie{
+	width:300px;
+	display:flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.R_Movie button{
+	width:250px;
+	height: 40px;
+} 
+.R_theater{
+	width:300px;
+	display:flex;
+	
+}
+.R_theater_1{
+	display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.R_theater_2{
+	display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.R_theater button{
+	width:130px;
+	height: 40px;
+}
+.R_date{
+	width:300px;
+	display:flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.R_date button{
+	width:250px;
+	height: 40px;
+}
+.R_time{
+	width:300px;
+	display:flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.R_time button{
+	width:250px;
+	height: 40px;
+}
