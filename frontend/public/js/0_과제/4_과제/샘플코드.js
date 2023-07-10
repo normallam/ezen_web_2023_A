@@ -1,40 +1,57 @@
 console.log('샘플코드');
 let movie=['미션' , '엘리' , '범죄' ,'사냥' ];
-let Location = ['서울','경기','강원','제주'];
-let Movieth = ['강동','수원','속초','제주']
-let Dateon=['6일','7일','8일','9일'];
-console.log(movie)
+let location = ['서울','경기','강원','제주'];
+let time=['11:00','7일','8일','9일'];
+let seat=['','','','','','','','',''];
 
-print();
-function print(){
+console.log(movie)
+let 선택영화 = '';
+let 선택영화관 = '';
+let 입력날짜 = '';
+let 선택시간 = '';
+let 선택좌석 = ''; /*틱택톡 3배수면 끝나게*/
+
+moviePrint();
+function moviePrint(){
 	let html = ``;
 	for( let i = 0 ; i<movie.length ; i++ ){
-		
-		html += `<button class="movie${i+1}" onclick="onButton(${i+1})">${movie[i]}</button>`
-		
+		html += `<button class="movie${i}" onclick="onButton(${i})">${movie[i]}</button>`
 	}
-	document.querySelector('.R_Movie').innerHTML = html; 
+	document.querySelector('.R_Movie').innerHTML = html;  
 }
 
 
 function onButton(no){ console.log('onButton()함수')
-	
-	
-	
-	document.querySelector(`.movie${no}`).innerHTML = movie[no-1];
-	
-	
-// 1. 입력받은 데이터 호출 
-		// 1. document.querySelector(식별자).value
-	/*
-	let movie2Value = document.querySelector('.movie2').value;
-	let movie3Value = document.querySelector('.movie3').value;
-	let movie4Value = document.querySelector('.movie4').value;*/
-
-
-
-
+	선택영화 = movie[no];
+	console.log( 선택영화 )
 }
+// ----------------------------- //
+locationPrint();
+function locationPrint(){
+	//
+	let html = ``;
+	for( let i = 0 ; i<location.length; i++ ){
+		html += `<button class="location${i}" onclick="lonButton(${i})"> ${ location[i] } </button>`
+	}
+	document.querySelector('.R_theater').innerHTML = html;
+}
+function onButton(no){ console.log('lonButton()함수')
+	선택영화관 = location[no];
+	console.log(선택영화관)
+}
+//----------------------------------//
+timeprint();
+function timeprint(){
+	//
+	let html = ``;
+	for(let i = 0; i<time.length; i++){
+		html += `<button class="time${i}" onclick="tonButton(${i})">${time[i]}</button>`
+	}
+	document.querySelector('R_date').innerHTML = html;
+}
+function 
+
+
 function lonButton(no){
 	document.querySelector(`.Location${no}`).innerHTML = Location[no-1];
 }
