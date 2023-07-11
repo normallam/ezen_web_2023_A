@@ -49,7 +49,27 @@ function timeprint(){
 	}
 	document.querySelector('R_date').innerHTML = html;
 }
-function 
+function tonButton(no){ console.log('tonButton()함수')
+	선택시간 = time[no];
+	console.log(선택시간)
+	
+	
+}
+//---------------------------------//
+seatprint();
+function seatprint(){
+	//
+	let html = ``;
+	for(let i = 0; i<seat.length; i++){
+		html += ``	
+	}
+	
+	
+	
+} 
+
+
+
 
 
 function lonButton(no){
