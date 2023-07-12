@@ -2,12 +2,15 @@
 .Reservation{
 	display: flex;
 	border: 2px solid black;
-	width: 1200px;
+	width: 990px;
 	height: 500px;
+	margin: 0 auto;
+	background-color: #F2F0E5;
+	
 }
 
 .R_Movie{
-	width:300px;
+	width:290px;
 	display:flex;
 	flex-wrap: wrap;
     justify-content: center;
@@ -19,9 +22,10 @@
 	height: 40px;
 } 
 .R_theater{
-	width:300px;
+	width:200px;
 	display:flex;
-	
+    flex-wrap: wrap;
+    align-content: space-around;
 }
 .R_theater_1{
 	display: flex;
@@ -38,18 +42,18 @@
 	height: 40px;
 }
 .R_date{
-	width:300px;
+	width:100px;
 	display:flex;
 	flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 .R_date button{
-	width:250px;
+	width:100px;
 	height: 40px;
 }
 .R_time{
-	width:300px;
+	width:100px;
 	display:flex;
 	flex-wrap: wrap;
     justify-content: center;
@@ -59,6 +63,21 @@
 .R_time button{
 	width:250px;
 	height: 40px;
+}
+
+.R_seat{
+	width:400px;
+	display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+}
+
+.R_seat button{
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	
 }
 
 
