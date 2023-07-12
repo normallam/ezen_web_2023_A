@@ -8,30 +8,28 @@
 <body>
 
 
-	<div class="Reservation">
-		<div class="R_Movie">
-			
-		</div>
-		
-		<div class="R_theater">
-		
-		</div>
-		<div class="R_date">
-			<button class="date1" onclick="donButton(1)">날짜1</button>
-			<button class="date2" onclick="donButton(2)">날짜2</button>
-			<button class="date3" onclick="donButton(3)">날짜3</button>
-			<button class="date4" onclick="donButton(4)">날짜4</button>		
-		</div>
-		
-		<div class="R_time"><!--여기에 시간이 들어갈 자리  -->
-			
-		</div>
-		<div class="R_seat">
-			
-		</div>
-			
-	</div>
-
+   <div class="Reservation">
+      <div class="R_Movie">
+         
+      </div>
+      
+      <div class="R_theater">
+      
+      </div>
+      <div class="R_date">
+         <input type="date" class="dateInput" onchange="onDate()">   
+      </div>
+      
+      <div class="R_time"><!--여기에 시간이 들어갈 자리  -->
+         
+      </div>
+      <div class="R_seat">
+         
+      </div>
+         
+   </div>
+   
+   <button onclick="pay()">결제</button>
 
 
 
