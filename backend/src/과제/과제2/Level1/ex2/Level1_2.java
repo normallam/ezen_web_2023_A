@@ -10,7 +10,19 @@ public class Level1_2 {
 		System.out.printf("%-10s   %15s   %30s\n" , "type" , "value" , "range" );
 		System.out.println("-------------------------------------------------------------");
 		/* 문제풀이 위치 */
-		
+		boolean a = true;
+		boolean b = false;
+		System.out.printf("boolean			%b			%b %s %b\n",a,a,"or",b);
+		byte c = 100;
+		byte d = -128;
+		byte e = 127;
+		System.out.printf("byte			%d			   %d %s %d\n",c,d,"~",e);
+		char f = 'A';
+		char g = '0';
+		char j = '1';
+		int h = 65535;
+		String i = "character";
+		System.out.printf("char		%d		%d%s%d%s %s %d %s",f,g,"~",h,"[",i,j,"]");
 		/* ----------- */
 	}
 }
