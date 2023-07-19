@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+.title{text-align: center;}
+
+.login_table{ 
+	border: solid 1px #eeeeee;
+	width: 500px; height: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+.id{
+	width: 410px; height: 30px;
+	border: none;
+	border-bottom: solid 3px #eeeeee;
+	margin-top: 30px;
+}
+.password{
+	width: 410px; height: 30px;
+	border: none;
+	border-bottom: solid 3px #eeeeee;}
+
+.logins{text-align: left;
+padding-top: 20px;
+padding-left:37px; }
+	
+
+.btn1{width: 410px; height: 50px;
+background-color: #FEE500;
+border-style: none;
+margin-top: 20px;
+}
+.btn2{width: 410px; height: 50px;
+border-style: none;
+margin-top: 20px;
+}
+
+
+.btn3 {
+	border-style: none;
+	background-color: window; 
+	padding-top: 20px;
+	padding-bottom: 40px;
+	}
+.btn3_1{
+	padding-right: 37px;
+	text-align: right;
+}	
+	
+	
+
+.etc{text-align: center;}
+
+.btn6{ 
+	border-style: none;
+	background-color: window;
+	text-align: center;
+}
+
+.btn7{
+	border-style: none;
+	background-color: window;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+
+.inf1{
+	font-weight: bold
+}
+.inf2{
+	font-weight: bold
+}
+
+.cop{text-align: center;}

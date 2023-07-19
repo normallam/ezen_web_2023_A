@@ -1,0 +1,98 @@
+@charset "UTF-8";
+.Reservation{
+	display: flex;
+	border: 2px solid black;
+	width: 990px;
+	height: 500px;
+	margin: 0 auto;
+	background-color: #F2F0E5;
+	
+}
+
+.R_Movie{
+	width:290px;
+	display:flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.R_Movie button{
+	width:250px;
+	height: 40px;
+} 
+.R_theater{
+	width:200px;
+	display:flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+.R_theater_1{
+	display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.R_theater_2{
+	display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.R_theater button{
+	width:130px;
+	height: 40px;
+}
+.R_date{
+	width:100px;
+	display:flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.R_date button{
+	width:100px;
+	height: 40px;
+}
+.R_time{
+	width:100px;
+	display:flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.R_time button{
+	width:250px;
+	height: 40px;
+}
+
+.R_seat{
+	width:400px;
+	display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+}
+
+.R_seat button{
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	
+}
+
+
+/*
+영화관 좌석 선택시 확대
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+*/

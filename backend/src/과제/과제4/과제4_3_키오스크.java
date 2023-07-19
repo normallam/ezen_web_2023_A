@@ -20,6 +20,7 @@ public class 과제4_3_키오스크 {
 			System.out.print(">>>>>> 선택 : "); int ch = scanner.nextInt();
 			
 			/* 문제풀이 위치 */
+			//step1 : 메뉴 선택에 따른 서로 다른 실행/코드
 			
 			
 			/* ----------- */

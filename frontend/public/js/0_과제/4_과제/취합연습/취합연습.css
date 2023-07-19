@@ -1,0 +1,183 @@
+
+@charset "UTF-8";
+/*----------------기준 시작----------------------*/
+/*-------------헤더부분------------------*/
+#R_wrap{
+	width:990px;
+}
+.R_buttons{
+	display: flex;
+	padding-left: 600px;
+	font-size: 15px;
+}
+.R_navi{
+	border:none;
+}
+.R_buttons a{
+	margin-bottom: 30px;
+	background-color: #F2F0E5;
+	border: 1px solid #63625F;
+	margin-left: 20px;
+	height: 20px;
+	font-size: 20px;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.R_ticketbox{
+	width:990px;
+	margin:0 auto;
+	border: 1px solid #D4D3C9;
+}
+/*---------------본문 부분(스텝들)-------------------*/
+.R_steps{
+	display:flex;
+	text-align: center;
+	height: 500px;
+	background-color: #F2F0E5;
+}
+
+
+.R_steps h2{
+	background-color: #333333;
+	color:#C4C4C4;
+	height: 30px;
+	font-size: 20px;
+}
+/*----------영화선택----------------*/
+.R_sector_M{
+	width:290px;
+}
+
+.R_sector_Mt{
+	text-align: center;
+}
+.R_sector_Mn div{
+	width: 100%;
+}
+
+/*-------------극장선택-------------*/
+.R_sector_t{
+	width:250px;
+}
+.R_sector_tt{
+	text-align: center;
+}
+.R_sector_tl{
+	display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.R_sector_tl div{
+	padding-top: 50px;
+}
+/*-------------날짜선택-------------*/
+.R_sector_d{
+	width:100px;
+	
+}
+.R_sector_dt{
+	text-align: center;
+}
+.R_sector_dm{
+	padding-top: 30px;
+}
+.R_sector_dd{
+	padding-top: 50px;
+}
+.R_sector_dd ul{
+	padding-top: 50px;
+}
+
+.R_sector_ww div{
+	padding-top: 50px;
+	
+}
+.R_sector_ww{
+    display: flex;
+    flex-direction: column;
+}
+.seat{
+	width: 20px; height: 20px;
+	
+}
+
+/*-------------좌석선택-------------*/
+
+.R_sector_ss{
+	width: 350px;
+	height: 300px;
+	background-color: #F2F0E5;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*-------------푸터부분-------------*/
+.R_details{
+	display:flex;
+	width:1300px;
+	margin:0 auto;
+	background-color: #1D1D1C;	
+	color:#CCCCCC;
+	padding: 50px;
+	text-align: center;
+}
+.R_details_n{
+	width: 300px;
+	font-size: 15px;
+}
+.R_details_t{
+	width: 300px;
+	font-size: 15px;
+}
+.R_details_s{
+	width: 300px;
+	font-size: 15px;
+}
+.R_details_p{
+	width: 400px;
+	font-size: 30px;
+}
+.R_details_p button{
+	color:#CCCCCC;
+	text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+}
+
+.movie{
+	background-color: transparent;
+    border: none;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+.area{
+	background-color: transparent;
+    border: none;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+.time{
+	background-color: transparent;
+    border: none;
+    margin-top: 30px; 
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+.dateInput{
+	width:93px;
+}
+.R_steps_t{
+	font-size: 10px;
+}
+
+.pay{	
+	color:#CCCCCC;
+	padding: 50px;
+	text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+}

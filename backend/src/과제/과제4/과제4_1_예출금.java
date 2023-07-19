@@ -17,7 +17,9 @@ public class 과제4_1_예출금 {
 			int ch = scanner.nextInt();
 			
 			/* 문제풀이 위치 */
+			//step 1 : 
 			
+			//step 2 : 경우의 수 true 기능 구현
 			
 			/* ----------- */
 			
