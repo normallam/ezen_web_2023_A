@@ -8,6 +8,7 @@ public class Ex2_확인문제9_2 {//class s
 		
 		int count = 0; // 모든 경우의 수 if{}에서 공유하기 위해 if{}밖에서 선언
 		int[] scores = new int[count]; // 모든 경우의 수 if{}에서 공유하기 위해 if{} 밖에서 선언
+		// 현재 scores의 배열의 길이 = 0
 		// 3. 변수 저장
 		
 		//[p.199] 확인문제 9
@@ -23,30 +24,39 @@ public class Ex2_확인문제9_2 {//class s
 		
 		if(ch == 1) {// 1. 입력한 값(ch)가 1일때
 			System.out.print("학생수>");
-			count=scanner.nextInt(); // <--- 더럽게 안나옴
+			count=scanner.nextInt(); // <--- 더럽게 안나옴// 학생수 입력 해야함
 			System.out.print("입력한 학생수"+count);
-			scores = new int[count];
+			scores = new int[count]; // 학생수에 따라 달라지는 점수 저장용도??
 			
 		}
 		if(ch == 2) {// 2. 입력한 값(ch)가 2일때
-			scores[]=scanner.nextInt();
-			System.out.println(scores[]);
+			for(int i=0; i<count;i++) { // 학생 수를 처음부터 끝까지 살펴본 후에 학생 점수 입력
+				System.out.print("인덱스에 저장할 학생점수:");
+				scores[i]=scanner.nextInt();
+				
+			}
 		}
 		if(ch == 3) {// 3. 입력한 값(ch)가 3일때
-			//for() {
-				
-			//}
+			for(int i=0; i<scores.length;i++){// 학생점수를 끝까지 살펴본 후에 학생점수 값 출력
+				System.out.println("인덱스에 저장된 학생점수:"+scores[i]);
+			}
+			
 		}
 		if(ch == 4) {// 4. 입력한 값(ch)가 4일때
 			int sum = 0 ; // 배열내 데이터를 모두 더한(누계) 값을 저장하는 변수
 			int max = 0 ; // 배열내 데이터중에 가장 큰 값을 저장하는 변수
 		
 			//배열내 모든 데이터 호출[0인덱스 마지막 인덱스까지 호출]
-			
+			for(int i=0; i<scores.length;i++) {//학생점수를 끝까지 살펴본 후에 학생점수를 다 더하고 최대 값 구하고
+				sum += scores[i];			
+			if(max<scores[i])max=scores[i];
+			}									
+			System.out.println("최고점수 :"+max);	//그리고 반복문 나와서 출력
+			System.out.println("평균"+((double)sum/count));
 		}
 		
-		if(ch == 5) {// 5. 입력한 값(ch)가 5일때
-			
+		if(ch == 5) {// 5. 입력한 값(ch)가 5일때 //브레이크 걸어서 무한루프 종료
+			System.out.println("프로그램 종료");break;
 		}
 			
 			
