@@ -21,7 +21,7 @@ public class Ex2_확인문제9_2 {//class s
 		Scanner scanner = new Scanner(System.in);
 			// 2. 객체.nextLine(); : 입력받은 데이터를 문자열로 반환 함수 //
 		int ch = scanner.nextInt();
-		
+				
 		if(ch == 1) {// 1. 입력한 값(ch)가 1일때
 			System.out.print("학생수>");
 			count=scanner.nextInt(); // <--- 더럽게 안나옴// 학생수 입력 해야함
