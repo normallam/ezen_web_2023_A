@@ -68,11 +68,10 @@ public class 과제5_키오스크_배열 {
 					
 					if( basket > 0 ) { // 바구니에 수량이 있는경우만 출력 
 						System.out.printf( "%10s %10s %10s \n" , name ,  basket , basket*price );
-					}
-				}
-			}
+					}// if e
+				}//for e
+			}//else e
 			/* ----------- */
-			
 		} // while end 
 	} // main end 
 } // class end 

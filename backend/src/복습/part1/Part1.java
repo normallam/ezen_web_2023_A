@@ -56,13 +56,13 @@ public class Part1 {//class s
 				System.out.println("-----------------");
 				System.out.println("제품명    수량    가격");
 				if(콜라바구니>0) {
-					System.out.println("콜라"+ 콜라바구니 +"    "+ 콜라가격);
+					System.out.println("콜라"+ 콜라바구니 +"    "+ 콜라가격*콜라바구니);
 				}
 				if(사이다바구니>0) {
-					System.out.println("사이다"+ 사이다바구니 +"    "+ 사이다가격);
+					System.out.println("사이다"+ 사이다바구니 +"    "+ 사이다가격*사이다바구니);
 				}
 				if(환타바구니>0) {
-					System.out.println("환타"+ 환타바구니 +"    "+ 환타가격);
+					System.out.println("환타"+ 환타바구니 +"    "+ 환타가격*환타바구니);
 				}
 				int sum =(콜라바구니*콜라가격)+(사이다바구니*사이다가격)+(환타바구니*환타가격);
 				
