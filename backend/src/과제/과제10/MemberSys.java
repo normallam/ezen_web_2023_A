@@ -1,33 +1,56 @@
 package 과제.과제10;
+							//현재 클래스에서 같은 패키지에 있는 클래스 호출 = 생략
+//import java.util.Arrays;	//현재 클래스에서 다른 패키지에 있는 클래스 호출 = import
+							//java.lang 기본 패키지이므로 생략 (String, System 등)
+//import java.util.Scanner;	//자동완성 이용해서 클래스 작성하면 import 작성
+//vs
+import java.util.*;			// 해당 패키지내 모든 클래스 호출
 
-import java.util.Arrays;
-import java.util.Scanner;
 
 import 과제.과제9.Member;
 
-public class MemberSys {
+public class MemberSys {//class s
 	
 	static Member[] memberList = new Member[100];
-	static Scanner sc = new Scanner(System.in);
+	static Scanner sc = new Scanner(System.in); // 2. 모든 함수에서 사용 가능한 인스턴스 멤버
+												// 프로그램내 전역구역에서 공유 사용되는 메모리 = 정적멤버
+												// 1. 인스턴스멤버		=힙영역		=new 마다 할당 => 
+												// 2. 
+			
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) {// main s
 		
-		while(true) {
+		
+		
+		while(true) {	//무한루프
 			
 			System.out.println("\n\n--------- 회원 시스템 ---------"); 
 			System.out.print("1.회원가입 2.로그인 3.아이디찾기 4.비밀번호찾기    선택> ");
+			// 1. 입력객체의 위치생각 // 입력객체는 현재{} 사용할껀지... 모든 구역에서 사용할껀지 
+			//입력객체의 사용 구역 범위 생각!!!! [프로그램내 전역구역 =static]
+			
 			int ch = sc.nextInt(); 
 			
-			if( ch == 1 ) { 회원가입 (); }
+			if( ch == 1 ) {	 회원가입 (); } //main함수 밖에 있는 다른 함수 호출
+			// 1. 인스턴스멤버(static) 함수는 객체를 생성하고 호출한다.
+			// 2. 정적멤버(static있는) 함수는 객체없이 클래스를 통한 호출한다.
 			else if( ch == 2 ) { 로그인 (); } 
 			else if( ch == 3 ) { 아이디찾기 (); } 
 			else if( ch == 4 ) { 비밀번호찾기 (); } 
 			
 		} // w e 
-	}
+	} //main e
 	
-	static void 회원가입 () { }
-	static void 로그인 () { }
+	
+	static void 회원가입 () {//인스턴스 멤버 =객체 생성해서 할당후 사용
+		// 1. 입력받기
+		System.out.println();
+		System.out.println();
+		
+		
+		
+	} 
+	static void 로그인 () { } //정적 멤버 = 우선할당
 	static void 아이디찾기 () { }
 	static void 비밀번호찾기 () { }
 	
