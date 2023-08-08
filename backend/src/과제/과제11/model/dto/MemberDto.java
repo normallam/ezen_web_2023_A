@@ -7,18 +7,18 @@ public class MemberDto {
 	private int mno;
 	private String mid;
 	private String mpw;
-	private String mnmae;
+	private String mname;
 	private String mphone;
 	// 2. 생성자
 		// 1. 기본생성자 컨트롤 스페이스바
 	public MemberDto() {}
 		// 2. 풀생성자 마우스 오른쪽 using
-	public MemberDto(int mno, String mid, String mpw, String mnmae, String mphone) {
+	public MemberDto(int mno, String mid, String mpw, String mname, String mphone) {
 		super();
 		this.mno = mno;
 		this.mid = mid;
 		this.mpw = mpw;
-		this.mnmae = mnmae;
+		this.mname = mname;
 		this.mphone = mphone;
 	}
 	
@@ -43,11 +43,11 @@ public class MemberDto {
 	public void setMpw(String mpw) {
 		this.mpw = mpw;
 	}
-	public String getMnmae() {
-		return mnmae;
+	public String getMname() {
+		return mname;
 	}
-	public void setMnmae(String mnmae) {
-		this.mnmae = mnmae;
+	public void setMname(String mname) {
+		this.mname = mname;
 	}
 	public String getMphone() {
 		return mphone;
@@ -62,7 +62,7 @@ public class MemberDto {
 		// 2. to string
 	@Override
 	public String toString() {
-		return "MemberDto [mno=" + mno + ", mid=" + mid + ", mpw=" + mpw + ", mnmae=" + mnmae + ", mphone=" + mphone
+		return "MemberDto [mno=" + mno + ", mid=" + mid + ", mpw=" + mpw + ", mname=" + mname + ", mphone=" + mphone
 				+ "]";
 	}
 	
