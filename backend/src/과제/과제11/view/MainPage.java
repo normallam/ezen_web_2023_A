@@ -63,7 +63,7 @@ public class MainPage {
 		boolean result = MemberController.getInstance().loginLogic(id, pw);
 		if( result ) { 
 			System.out.println("안내] 로그인성공");
-			LoginPage.getInstance().LoginMenu(); // 만약에 로그인 성공하면 다른 view 클래스로 이동 
+			LoginPage.getInstance().loginMenu(); // 만약에 로그인 성공하면 다른 view 클래스로 이동 
 		}
 		else { System.out.println("경고] 로그인실패");}
 	}
