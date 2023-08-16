@@ -51,7 +51,7 @@ public class BoardDao extends Dao {
 				// 변환된 Dto 를 리스트객체에 담기 
 				list.add(dto);
 			}
-		}catch (Exception e) { }
+		}catch (Exception e) {System.out.println(e); }
 		return list ;
 	}
 	
