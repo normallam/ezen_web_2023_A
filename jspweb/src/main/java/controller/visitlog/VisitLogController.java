@@ -54,10 +54,52 @@ public class VisitLogController extends HttpServlet {
 	// 3. 수정 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// 1. AJAX 데이터 요청한다
+			// request.getParameter("속성명"); String 변환
+		int vno = Integer.parseInt(request.getParameter("vno"));	 System.out.println("vno: " + vno);
+		String vtext = request.getParameter("vtext");				System.out.println("vtext: "+vtext);
+		String vpw = request.getParameter("vpw");					System.out.println("vpw: " + vpw);
+		
+		// 2. (데이터많으면)객체화
+		// 3. Dao에게 전달 후 SQL 결과를 받는다.
+		boolean result = VisitDao.getInstance().vupdate(vno, vtext, vpw);
+		// 4. 결과를 AJAX에게 전달한다
+		response.setContentType("application/json;charset=UTF-8");
+		response.getWriter().print(result);
 	}
 	// 4. 삭제
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 1. AJAX 데이터 요청한다
+		int vno = Integer.parseInt(request.getParameter("vno"));	System.out.println("vno: " + vno);
+		String vpw = request.getParameter("vpw");					System.out.println("vpw: " + vpw);
 		
+		// 2. (데이터많으면)객체화
+		// 3. Dao에게 전달 후 SQL 결과를 받는다.
+		boolean result = VisitDao.getInstance().vdelete(vno, vpw);
+		// 4. 결과를 AJAX에게 전달한다
+		response.setContentType("application/json;charset=UTF-8");
+		response.getWriter().print(result);
 	}
 
+	/*
+	
+		-HTTP서블릿클래스는 기본적으로 get,post,put,delete 함수제공
+		-기본 톰캣 
+		-put,delete 함수도 매개변수 전달 가능하도록 설정[서버마다 설정]
+		server.xml
+			63번줄쯤 원본 코드
+				    <Connector connectionTimeout="20000" maxParameterCount="1000" port="80" protocol="HTTP/1.1" redirectPort="8443" />
+			put,delete에도 매개변수
+	*/
 }
+
+
+
+
+
+
+
+
+
+
+

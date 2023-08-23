@@ -60,8 +60,8 @@ function vread() {// 실행조건: JS 열릴때 1번 실행, 등록 ,수정, 삭
 					</div>
 					<div class ="visitbox_center">${r[i].vtext}</div>
 					<div class ="visitbox_bottom">
-						<button type ="button">수정</button>
-						<button type ="button">삭제</button>
+						<button onclick="vupdate(${r[i].vno})" type ="button">수정</button>
+						<button onclick="vdelete(${r[i].vno})" type ="button">삭제</button>
 					</div>
 					</div>`
 				}
@@ -72,20 +72,66 @@ function vread() {// 실행조건: JS 열릴때 1번 실행, 등록 ,수정, 삭
 		error: function f(r){}
 		
 	})
-	
-	
-	
-	
+
 } // f e
 
 
-// 1. update ( 수정 ) : 방문록 수정 함수 = vupdate
-function vupdate() {
+// 3. update ( 수정 ) : 방문록 수정 함수 = vupdate
+	// 누구를(클릭된 방문록vno) 어떻게(새롭게 입력받아vupdate) 수정할 것인지
+function vupdate(vno) { console.log('vupdate()open' + vno);
+	
+	// 1. 수정할 내용 입력
+	let vtext =  prompt('수정할 방문록내용 : '); 			//alert(); :확인알림창 confirm(); : 확인/취소알림창  prompt(); : 알림창에서 입력받기
+	// 2. 비밀번호가 일치할 경우에 수정하므로 확인용 비밀번호 입력받기
+	let vpw = prompt('방문록비밀번호 : ')
+	
+	// 수정 준비물 : vno(누구를), vtext(어떤내용으로), vpw(조건용 : 비밀번호 일치여부)
+	
+	$.ajax({
+		url:"/jspweb/VisitLogController", // 통신할 백엔드(컨트롤러 서블릿 주소)
+		method:"put",
+		data:{vno : vno, vtext: vtext, vpw: vpw},
+		success: function f(r){console.log("put통신성공");
+		
+			if(r==true){alert('수정성공'); vread();}
+			else{alert('수정실패]비밀번호가 일치하지 않습니다.');}
+		},
+		error : function f(r){console.log(r);}
+		
+	})
 	
 } // f e 
 
 
-// 1. delete ( 삭제 ) : 방문록 삭제 함수 = vdelete
-function vdelete() {
+// 4. delete ( 삭제 ) : 방문록 삭제 함수 = vdelete
+function vdelete(vno) { console.log('vdelete()open' + vno)
+	
+	// 1. 비밀번호가 일치할 경우에 수정하므로 확인용 비밀번호 입력받기
+	let vpw = prompt("방문록비밀번호 : ");
+	
+	// 삭제 준비물 : vno(누구를), vpw(조건용 : 비밀번호 일치여부)
+	
+	$.ajax({
+		url:"/jspweb/VisitLogController", // 통신할 백엔드(컨트롤러 서블릿 주소)
+		method:"delete",
+		data:{vno : vno, vpw: vpw},
+		success: function f(r){console.log("delete통신성공");
+		
+			if(r==true){alert('삭제성공'); vread();}
+			else{alert('삭제실패]비밀번호가 일치하지 않습니다.');}
+		
+		},
+		error : function f(r){console.log(r);}
+		
+	})
+
+	
+	
+	
+	
+	
+	
+	
+	
 	
 } // f e 
