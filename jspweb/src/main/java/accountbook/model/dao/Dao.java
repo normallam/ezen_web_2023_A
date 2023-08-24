@@ -15,7 +15,7 @@ public class Dao {
 	// 2. 생성자
 	public Dao() {
 		try {
-			class.forname("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspweb", "root","1234");
 			
 			

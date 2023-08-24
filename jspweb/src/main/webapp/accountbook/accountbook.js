@@ -4,35 +4,34 @@ console.log('accountbook.js 열림')
 
 function awrite(){
 	
-	let atextInput = document.querySelector('atext'); console.log('atextInput' + atextInput);
-	let apayInput = document.querySelector('apay'); console.log('apayInput'+apayInput);
-	let adateInput = document.querySelector('adate'); console.log('adateInput' + adateInput);
-}
-atext,apay,adate
+	let atextInput = document.querySelector('.atext'); console.log('atextInput' + atextInput);
+	let anumberInput = document.querySelector('.anumber'); console.log('anumberInput'+anumberInput);
+	let adateInput = document.querySelector('.adate'); console.log('adateInput'+adateInput);
 
 	let info = {
 		atext : atextInput.value,
-		apay : apayInput.value,
-		adate : adateInput.value
+		anumber : anumberInput.value,
+		adate : adateInput.value,
 	}; console.log(info);
 	$.ajax({
 		url : "/jspweb/Accountbook",
-		method : "",
+		method : "post",
 		data : info,
 		success : function f(r){console.log(r);
 		if(r==true){alert('등록성공'); aread();
-		atextInput.value= '' ; apayInput.value = ''; adateInput.value = '';
+		atextInput.value= '' ; anumberInput.value = '';   adateInput.value = '';
 			
 		}
 		else{alert('등록실패');}
 		},
 		error : function f(r){}
 	})
-	
+}	
+
 // 2. read
 aread();
 function aread(){
-	
+		
 	
 	$.ajax({
 		url: "/jspweb/Accountbook",
@@ -40,12 +39,19 @@ function aread(){
 		data: "",
 		success : function f(r){console.log(r);
 		
-			let output = document.querySelector('account_Bottom');
+			let output = document.querySelector('.account_Bottom');
 			
-			let html = ``;
+			let html = '';
 			
 				for(let i =0; i<r.length;i++){
-					html +=``
+					html +=`
+					<div class="contentbox">
+						<div class = "atext1" >${r[i].atext}</div>
+						<div class = "apay1"  >${r[i].anumber}</div>
+						<div class = "adate1" >${r[i].adate}</div>
+						<button onclick="aupdate(${r[i].ano})" type="button">수정</button>
+						<button onclick="adelete(${r[i].ano})" type="button">삭제</button>
+					</div>`;
 
 				}
 			output.innerHTML = html;
@@ -58,7 +64,7 @@ function aread(){
 }// f end
 // 3. update
 
-function aupdate(atext,adate){console.log('aupdate()open' + atext,adate);
+function aupdate(ano){console.log('aupdate()open' + ano);
 
 	let atext = prompt('수정할 항목내용 : ');
 	let adate = prompt('수정할 날짜 : ')
@@ -66,11 +72,11 @@ function aupdate(atext,adate){console.log('aupdate()open' + atext,adate);
 	$.ajax({
 		url : "/jspweb/Accountbook",
 		method : "put",
-		data : {atext : atext, adate : adate},
+		data : {ano : ano , atext : atext , adate : adate },
 		success : function f(r){console.log("put통신성공");
 		
 			if(r==true){alert('수정성공'); aread();}
-			else{alert('수정실패] 비밀번호가 일치하지 않습니다.');}
+			else{alert('수정실패');}
 			
 		},
 		error : function f(r){console.log(r);}
@@ -83,13 +89,13 @@ function aupdate(atext,adate){console.log('aupdate()open' + atext,adate);
 
 // 4. delete
 
-function adelete(atext,adate){console.log('adelete()open'+atext,adate)
+function adelete(ano){console.log('adelete()open'+ano)
 
 
 	$.ajax({
-		url: "",
-		method:"",
-		data:{},
+		url: "/jspweb/Accountbook",
+		method:"delete",
+		data:{ano},
 		success: function f(r){console.log("delete통신성공")
 		
 			if(r=true){alert('삭제성공'); aread();}

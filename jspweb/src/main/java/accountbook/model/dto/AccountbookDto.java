@@ -3,18 +3,32 @@ package accountbook.model.dto;
 public class AccountbookDto {
 	private int ano;
 	private String atext;
-	private String apay;
+	private String anumber;
 	private String adate;
 
 	public AccountbookDto() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public AccountbookDto(int ano, String atext, String apay, String adate) {
+	public AccountbookDto(int ano, String atext, String anumber, String adate) {
 		super();
 		this.ano = ano;
 		this.atext = atext;
-		this.apay = apay;
+		this.anumber = anumber;
+		this.adate = adate;
+	}
+	
+	public AccountbookDto(String atext, String anumber) {
+		super();
+		this.atext = atext;
+		this.anumber = anumber;
+	}
+	
+
+	public AccountbookDto(String atext, String anumber, String adate) {
+		super();
+		this.atext = atext;
+		this.anumber = anumber;
 		this.adate = adate;
 	}
 
@@ -34,12 +48,12 @@ public class AccountbookDto {
 		this.atext = atext;
 	}
 
-	public String getApay() {
-		return apay;
+	public String getAnumber() {
+		return anumber;
 	}
 
-	public void setApay(String apay) {
-		this.apay = apay;
+	public void setAnumber(String anumber) {
+		this.anumber = anumber;
 	}
 
 	public String getAdate() {
@@ -52,10 +66,7 @@ public class AccountbookDto {
 
 	@Override
 	public String toString() {
-		return "AccountbookDto [ano=" + ano + ", atext=" + atext + ", apay=" + apay + ", adate=" + adate + "]";
+		return "AccountbookDto [ano=" + ano + ", atext=" + atext + ", anumber=" + anumber + ", adate=" + adate + "]";
 	}
-	
-	
-	
 	
 }// class e

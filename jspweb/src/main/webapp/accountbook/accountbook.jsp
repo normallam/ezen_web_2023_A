@@ -11,24 +11,20 @@
 <body>
 
 	<div class ="accountbookwrap"> <!--전체구역-->
-	
+	s
 		<div class = "account_Top"> <!--쓰기구역-->
 			<div class = "account_inputs">
 				<textarea class = "atext" placeholder="항목내용"></textarea>
-				<input class = "apay" type ="text" placeholder="금액">
-				<input class = "adate" type ="datetime">
-				<button onclick="atext()" type="button">등록</button>
+				<input class = "anumber" type ="text" placeholder="금액">
+				<input class = "adate" type ="text" placeholder = "날짜">
+				<button onclick="awrite()" type="button">등록</button>
 			
 			
 			</div>
 		</div>
 		<div class = "account_Bottom"> <!--출력구역-->
-				<textarea class = "atext1" placeholder="항목내용"></textarea>
-				<input class = "apay1" type ="text" placeholder="금액">
-				<input class = "adate1" type ="datetime">
-		
-		
-		
+			
+	
 		</div>
 	
 	</div>
