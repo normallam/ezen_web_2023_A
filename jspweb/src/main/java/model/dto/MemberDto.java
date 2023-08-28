@@ -4,7 +4,7 @@ public class MemberDto {
 
 	private int mno;
 	private String mid;
-	private String mpw;
+	private String mpwd;
 	private String memail;
 	private String mimg;
 	
@@ -12,20 +12,20 @@ public class MemberDto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MemberDto(int mno, String mid, String mpw, String memail, String mimg) {
+	public MemberDto(int mno, String mid, String mpwd, String memail, String mimg) {
 		super();
 		this.mno = mno;
 		this.mid = mid;
-		this.mpw = mpw;
+		this.mpwd = mpwd;
 		this.memail = memail;
 		this.mimg = mimg;
 	}
 	
 
-	public MemberDto(String mid, String mpw, String memail, String mimg) {
+	public MemberDto(String mid, String mpwd, String memail, String mimg) {
 		super();
 		this.mid = mid;
-		this.mpw = mpw;
+		this.mpwd = mpwd;
 		this.memail = memail;
 		this.mimg = mimg;
 	}
@@ -46,12 +46,12 @@ public class MemberDto {
 		this.mid = mid;
 	}
 
-	public String getMpw() {
-		return mpw;
+	public String getMpwd() {
+		return mpwd;
 	}
 
-	public void setMpw(String mpw) {
-		this.mpw = mpw;
+	public void setMpwd(String mpwd) {
+		this.mpwd = mpwd;
 	}
 
 	public String getMemail() {
@@ -72,11 +72,12 @@ public class MemberDto {
 
 	@Override
 	public String toString() {
-		return "MemberDto [mno=" + mno + ", mid=" + mid + ", mpw=" + mpw + ", memail=" + memail + ", mimg=" + mimg
+		return "MemberDto [mno=" + mno + ", mid=" + mid + ", mpwd=" + mpwd + ", memail=" + memail + ", mimg=" + mimg
 				+ "]";
 	}
+
 	
-	
+
 	
 	
 }
