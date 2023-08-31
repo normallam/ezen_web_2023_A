@@ -1,4 +1,4 @@
-
+console.log('js연결')
 /* onchange : 포커스(커서) 변경될때 값이 다르면 */
 /* onkeyup : 키보드에서 키를 누르고 떼었을때 */
 /* onkeydown : 키보드에서 키를 눌렀을때 */
@@ -218,9 +218,8 @@ function settimer(){
 		m = m < 10 ? "0"+m : m;	// 만약에 분이 한자리수이면 0 붙이고 아니면 그냥
 		s = s < 10 ? "0"+s : s;
 		
+		document.querySelector('.timebox').innerHTML = `${m}:${s}`; // 현재 인증 시간(초) HTML 대입
 		
-		
-		document.querySelector('.timerbox').innerHTML = `${m}:${s}`; // 현재 인증 시간(초) HTML 대입
 		timer--;// 1씩 차감
 		
 		// 만약에 타이머가 0보다 작으면 [시간 끝]
@@ -325,7 +324,17 @@ function signup(){
                	data : signupData ,		// FormData 객체를 전송
               	contentType : false ,	// form 객체 전송타입
                	processData : false ,	
-               	success : r => { console.log(r) } ,
+               	success : r => {
+			
+					   if(r){// 회원가입 성공	[1.알린다 2. 페이지전환]
+						   alert('회원가입성공');
+						   location.href = '/jspweb/member/login.jsp';
+					   }
+					   else{//회원가입실패
+						   alert('회원가입실패[관리자문의]');
+					   }
+					   
+					    console.log(r) } ,
                error : e => { console.log(e) } ,
             })
 			
@@ -334,7 +343,7 @@ function signup(){
 	
 	}else{
 		
-	console.log('회원가입 진행불가능');	
+	alert('정상적으로 입력 안된 내용이 있습니다.');
 	}
 	
 	
