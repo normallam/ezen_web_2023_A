@@ -7,10 +7,23 @@ public class MemberDto {
 	private String mpwd;
 	private String memail;
 	private String mimg;
-	
-	public MemberDto() {
-		// TODO Auto-generated constructor stub
+	// DB 없는 필드
+	private String loginDatetime; // 로그인 시간
+
+	// -- * 로그인 객체를 만들 생성자 [패스워드 제외] : 오버로딩 하기위해 매개변수 타입 순서 변경
+	public MemberDto(String loginDatetime, int mno, String mid, String memail, String mimg) {
+		super();
+		this.mno = mno;
+		this.mid = mid;
+		this.memail = memail;
+		this.mimg = mimg;
+		this.loginDatetime = loginDatetime;
 	}
+
+
+	
+	// 2. 생성자
+	public MemberDto() {}
 
 	public MemberDto(int mno, String mid, String mpwd, String memail, String mimg) {
 		super();
@@ -70,14 +83,24 @@ public class MemberDto {
 		this.mimg = mimg;
 	}
 
+
+
+	
 	@Override
 	public String toString() {
 		return "MemberDto [mno=" + mno + ", mid=" + mid + ", mpwd=" + mpwd + ", memail=" + memail + ", mimg=" + mimg
-				+ "]";
+				+ ", loginDatetime=" + loginDatetime + "]";
 	}
 
-	
 
+
+	public String getLoginDatetime() {
+		return loginDatetime;
+	}
+
+	public void setLoginDatetime(String loginDatetime) {
+		this.loginDatetime = loginDatetime;
+	}
 	
 	
 }
