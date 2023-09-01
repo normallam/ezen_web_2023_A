@@ -1,12 +1,15 @@
 package controller.board;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -30,8 +33,19 @@ public class BoardInfoController extends HttpServlet {
     }
     // 1. 전체조회 , 2.개별조회 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// 1. 요청 
+		
+		// 2. 유효성검사/객체화
+		
+		// 3. DAO 
+		ArrayList<BoardDto> result = BoardDao.getInstance().getList(); System.out.println( result );
+			// * java 객체 -> js객체 [json]형식의 문자열으로 변환
+		ObjectMapper objectMapper = new ObjectMapper();
+		String jsonArray = objectMapper.writeValueAsString(result);
+		
+		// 4. 응답 
+		response.setContentType("application/json;charset=UTF-8");
+		response.getWriter().print(jsonArray);
 	}
 	// 2. 쓰기 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -55,13 +69,11 @@ public class BoardInfoController extends HttpServlet {
 		int bcno = Integer.parseInt( multi.getParameter("bcno") );
 		// 2. 유효성검사/객체화 
 		BoardDto boardDto = new BoardDto(btitle, bcontent, bfile, mno, bcno);	System.out.println( boardDto );
-		
 		// 3. Dao 처리 
 		boolean result = BoardDao.getInstance().bwrite(boardDto);
 		// 4. (Dao 결과) 응답 
-		response.setContentType("application/json; charset=UTF-8");
+		response.setContentType("application/json; charset=UTF-8"); 
 		response.getWriter().print(result);
-			
 	}
 	// 3. 수정 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -12,6 +12,12 @@
 	<div class="webcontainer">
 		<button onclick="onWrite()" type="button">글쓰기</button>
 	</div>
+		<table class="boardTable">
+			
+		</table>
+	
+	
+	
 	
 	<script src="../js/board/list.js" type="text/javascript"></script>
 
