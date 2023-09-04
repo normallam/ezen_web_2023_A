@@ -15,7 +15,7 @@ function getList(){
 	$.ajax({
 		url : "/jspweb/BoardInfoController" , 
 		method : "get" ,
-		data : {} , 
+		data : {type : 1} , 
 		success : r => {console.log(r)
 			// 1. 출력할 위치
 			let boardTable = document.querySelector('.boardTable');
@@ -40,7 +40,7 @@ function getList(){
 			<tr>
 				<th>${b.bno}</th>
 				<th>${b.bcname}</th>
-				<th>${b.btitle}</th>
+				<th><a href="/jspweb/board/view.jsp?bno=${b.bno}">${b.btitle}</a></th>
 				<th>${b.mid}</th>
 				<th>${b.bview}</th>
 				<th>${b.bdate}</th>
@@ -58,3 +58,22 @@ function getList(){
 		error : e => {}
 	})
 }
+
+/*
+
+
+	HTTP URL에 매개변수(파라미터) 전달 (쿼리[질의] 스트링 방식)
+		- 정의 : 페이지 전환시 매개변수(PK,식별) 전달
+		- 형태
+			URL?변수명 = 데이터
+			URL?변수명 = 데이터&변수명 = 데이터 
+			HTTP://localhost:80/jspweb/board/view.jsp?bno=3
+			
+		
+		
+		-URL에서 매개변수 호출
+			new URL(location.href).searchParams.get("변수명")
+
+*/
+
+

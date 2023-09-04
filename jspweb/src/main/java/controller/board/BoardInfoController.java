@@ -17,35 +17,62 @@ import model.dao.BoardDao;
 import model.dto.BoardDto;
 import model.dto.MemberDto;
 
-/**
- * Servlet implementation class BoardInfoController
- */
+
 @WebServlet("/BoardInfoController")
 public class BoardInfoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public BoardInfoController() {
         super();
         // TODO Auto-generated constructor stub
     }
-    // 1. 전체조회 , 2.개별조회 
+    // type:  1. 전체조회 , 2. 개별조회 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1. 요청 
+		String type = request.getParameter("type");
 		
-		// 2. 유효성검사/객체화
-		
-		// 3. DAO 
-		ArrayList<BoardDto> result = BoardDao.getInstance().getList(); System.out.println( result );
-			// * java 객체 -> js객체 [json]형식의 문자열으로 변환
 		ObjectMapper objectMapper = new ObjectMapper();
-		String jsonArray = objectMapper.writeValueAsString(result);
+		String json ="";
 		
-		// 4. 응답 
+		if(type.equals("1")) {// 전체 조회 로직
+			
+			ArrayList<BoardDto> result = BoardDao.getInstance().getList(); System.out.println( result );
+			// * java 객체 -> js객체 [json]형식의 문자열으로 변환
+		
+			json = objectMapper.writeValueAsString(result);
+		
+			// 응답 
+		
+			
+		}else if(type.equals("2")) {// 개별 조회 로직
+			// 1. 매개변수 요청
+			int bno = Integer.parseInt(request.getParameter("bno"));
+			// 2. Dao 처리
+			BoardDto result = BoardDao.getInstance().getBoard(bno);
+			
+			
+			// 3. 만약에 (로그인 혹은 비로그인)요청한 사람과 게시물 작성한 사람과 동일하면
+			Object object = request.getSession().getAttribute("loginDto");	
+				// 로그인 정보[세션]
+			if(object == null) {// 비로그인
+				result.setIshost(false); // 남이 쓴 글
+			
+			}else {// 로그인
+				MemberDto login =(MemberDto)object;
+				// 내가 쓴 글
+				if(login.getMno() == result.getMno()) {result.setIshost(true);}
+				// 남이 쓴 글
+				else {result.setIshost(false);}	
+			}
+			json = objectMapper.writeValueAsString(result);
+		}
+		
+		// 공통 로직
+			// 1. 전제조회, 개별조회 하던 응답 로직 공통
 		response.setContentType("application/json;charset=UTF-8");
-		response.getWriter().print(jsonArray);
+		response.getWriter().print(json);
+		
 	}
 	// 2. 쓰기 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -77,11 +104,55 @@ public class BoardInfoController extends HttpServlet {
 	}
 	// 3. 수정 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		// 1. 수정할 첨부파일 업로드
+		MultipartRequest multi = new MultipartRequest(
+				request,
+				request.getServletContext().getRealPath("/board/upload"),
+				1024*1024*1024,
+				"UTF-8",
+				new DefaultFileRenamePolicy()
+				);
+				
+		System.out.println("위치" +request.getServletContext().getRealPath("/board/upload"));
+		
+		// 2. 수정할 데이터 요청
+		int bcno = Integer.parseInt(multi.getParameter("bcno"));
+		String btitle = multi.getParameter("btitle");
+		String bcontent = multi.getParameter("bcontent");
+		String bfile = multi.getFilesystemName("bfile"); // 파일명 호출
+		
+		// 2* 수정할 게시물 식별키
+		int bno = Integer.parseInt(multi.getParameter("bno"));
+		BoardDto updateDto = new BoardDto(bno, btitle, bcontent, bfile, bcno);
+		
+		
+		// * 만약에 새로운 첨부파일 없으면 기존 첨부파일 그대로 사용
+		if(updateDto.getBfile() == null) {
+			// 기존첨부파일 호출해서 수정dto에 저장하기
+			updateDto.setBfile(BoardDao.getInstance().getBoard(bno).getBfile());
+		}
+		
+		// 3. DAO
+		boolean result = BoardDao.getInstance().onUpdate(updateDto);
+		
+		// 4. (Dao 결과) 응답 
+		response.setContentType("application/json; charset=UTF-8"); 
+		response.getWriter().print(result);
+		
+		
+		
+		
 	}
 	// 4. 삭제 
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// 1. 요청
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		// 2. DAO
+		boolean result = BoardDao.getInstance().ondelete(bno);
+		// 3. 응답
+		response.setContentType("application/json; charset=UTF-8");
+		response.getWriter().print(result);
 	}
 
 }

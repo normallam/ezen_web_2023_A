@@ -1,3 +1,63 @@
-/**
- * 
- */
+
+console.log('js실행');
+let bno = new URL(location.href).searchParams.get("bno");
+// 1. 수정할 게시물의 기존 정보를 보여주기
+getBoard();
+function getBoard(){
+	
+	// 2. 쿼리스트링(URL주소상의 변수)의 변수 가져오기
+		// 쿼리스트링: URL? 변수명=값&변수명=값&변수명=값
+		// new URL(location.href).searchParams.get("변수명")
+	
+		console.log(bno);
+		
+	// 3. AJAX에게 bno 전달해서 게시물 정보 가져오기
+	 $.ajax({
+      url : "/jspweb/BoardInfoController",
+      method : "get",
+      data : {type : 2, bno : bno} ,
+      success : r => {
+		  console.log(r);
+		  //응답 결과를 html 대입
+		  document.querySelector('.bcno').value = `${r.bcno}`;
+		  document.querySelector('.btitle').value = `${r.btitle}`;
+		  document.querySelector('.bcontent').value = `${r.bcontent}`;
+		  document.querySelector('.oldfile').value = `${r.bfile}`;
+		  
+		  
+		  
+	  } ,
+      error : e => {}
+   }) //f end
+}
+// 2. 수정하기
+function onUpdate(){
+	console.log('onUpdate 실행')
+	// 1. 입력된(수정된) form 정보 한번에 가져오기
+		// 1. form 가져오기
+	let writeForm = document.querySelectorAll('.writeForm')[0];
+		// 2. form 객체화
+	let formdata = new FormData(writeForm);
+		// *3 form 객체에 데이터속성 추가 [bno]
+			// .set(속성명,값); // form에 데이터 속성 추가
+		formdata.set("bno",bno);
+	
+	// 3. ajax로 대용량(첨부파일) multipart
+	  $.ajax({
+      url : "/jspweb/BoardInfoController",
+      method : "put",
+      data : formdata ,
+      contentType : false,
+      processData : false,
+      success : r => {console.log(r);
+      	if(r){alert('수정성공'); location.href=`/jspweb/board/view.jsp?bno=${bno}`;
+      	}else{alert('수정실패');}
+      
+      } ,
+      error : e => {console.log(e);}
+   })
+
+}
+		
+
+
