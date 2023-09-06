@@ -41,9 +41,9 @@ function getBoard(){
 								</div>
 						제목 : <div> ${ r.btitle } </div>
 						내용 : <div> ${ r.bcontent } </div>
-						첨부파일 : <div> ${ r.bfile } </div>
-						
+						첨부파일 : <div><a href="/jspweb/FileDownLoad?filename=${r.bfile}">${ r.bfile }</a> </div>
 						`
+						/*<a href="HTTP get 메소드방식"></a>*/
 					// 3. 만약에 본인글 인지 제어 [본인들이면 수정/삭제 보여주기 / 아니면 표시안함]
 					
 					html += `<a href="list.jsp"><button type="button">목록보기</button></a>`	

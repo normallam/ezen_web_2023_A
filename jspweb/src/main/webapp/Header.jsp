@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 	<link href="/jspweb/css/header.css" rel="stylesheet">
+	
+	
+	
+	
+	
+	
 </head>
 <body>
 	<!-- 헤더 -->
