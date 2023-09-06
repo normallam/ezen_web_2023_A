@@ -16,6 +16,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import model.dao.BoardDao;
 import model.dto.BoardDto;
 import model.dto.MemberDto;
+import model.dto.PageDto;
 
 
 @WebServlet("/BoardInfoController")
@@ -37,10 +38,43 @@ public class BoardInfoController extends HttpServlet {
 		
 		if(type.equals("1")) {// 전체 조회 로직
 			
-			ArrayList<BoardDto> result = BoardDao.getInstance().getList(); System.out.println( result );
+			// ---------------------------- 1. 카테고리 ------------------------- // 
+			int bcno = Integer.parseInt(request.getParameter("bcno"));
+			
+			// ---------------------------- 2. 출력할 게시물 수/하나의 페이지의 최대 게시물 수------------------------- // 
+			int listsize = Integer.parseInt(request.getParameter("listsize"));
+			// ---------------------------- 3. 페이징 처리 하기------------------------- // 
+			int page =Integer.parseInt(request.getParameter("page"));
+				// 1. 페이지별 레코드의 시작번호
+			int startrow = (page-1)*listsize; // 페이지번호 * 최대 게시물 수 
+				// 1 * 10 = 10
+				// 2 * 10 = 20
+			// ---------------------------- 4. 마지막 페이지번호------------------------- // 
+				// 1. 마지막페이지번호/총페이지수 = 전체 게시물수 / 페이지별최대게시물수(listsize)
+				// 2. 전체게시물수
+			int totalsize = BoardDao.getInstance().getTotalSize(bcno);
+				// 3. 마지막페이지번호/총페이지수
+			int totalpage = totalsize%listsize == 0 ? 	// 만약에 나머지가 없으면
+							totalsize/listsize : 		// 몫
+							totalsize/listsize+1 ;		// 몫 +1(나머지 페이지수를 표시할 페이지1개 추가)
+					// 게시물수 : 10, 페이지별 2개씩 출력 => 총페이지수 5[몫]
+					// 게시물수 : 20, 페이지별 3개씩 출력 => 총페이지수 6[몫] + 1 나머지 [2]
+			
+		
+			
+			
+			ArrayList<BoardDto> result = BoardDao.getInstance().getList(bcno, listsize,startrow); 
+			
+			
+			// ---------------------------- 6. pageDto 구성------------------------- // 
+			PageDto pageDto = new PageDto(
+					page, listsize, startrow,
+					totalsize, totalpage, result);
+			
+			
 			// * java 객체 -> js객체 [json]형식의 문자열으로 변환
 		
-			json = objectMapper.writeValueAsString(result);
+			json = objectMapper.writeValueAsString(pageDto);
 		
 			// 응답 
 		
