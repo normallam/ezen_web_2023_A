@@ -1,15 +1,14 @@
 console.log('js연결');
 
-view(); // 어디서 불러오는거지
 
 // 1. 인사등록
-function Employee regist(){
+function regist(){
 	
 	let hrmForm = document.querySelectorAll('.E_text')[0];
 	console.log('hrmForm : ' + hrmForm);
 	let hrmData = new FormData(hrmForm);
 	console.log('hrmData : ' + hrmData);
-	$.ajax({
+	 $.ajax({
       url : "/jspweb/HrmController",
       method : "post",				// form 객체 [대용량] 전송은 무조건 post 방식
       data : hrmData ,				// FormData 객체를 전송
@@ -17,9 +16,9 @@ function Employee regist(){
       processData : false,
       success : r=> {
 		  if(r){
-			  console.log('저장성공!');
+			  console.log('저장성공!');  //view();
 		  }
-		  hrmread();
+		
 	  } ,
       error : e=> {console.log(e)}
    })
@@ -30,9 +29,9 @@ function Employee regist(){
 
 // 2. 인사조회
 
-view();
+//view();
 function view(){
-		console.log('view');
+		
 		$.ajax({
       	url : "/jspweb/HrmController",
       	method : "get",

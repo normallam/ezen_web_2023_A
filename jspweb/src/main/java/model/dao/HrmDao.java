@@ -45,7 +45,7 @@ public class HrmDao extends Dao{
 		} catch (Exception e) {System.out.println(e);
 			return list;
 		}
-		
+		return null;
 		
 		
 	}

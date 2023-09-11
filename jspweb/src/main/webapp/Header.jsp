@@ -29,7 +29,7 @@
 			<li> <a href="/jspweb/chatting/chatting.jsp">채팅</a> </li>
 			<li> <a href="#">(과1)가계부</a> </li>
 			<li> <a href="#">(과2)열람실</a> </li>
-			<li> <a href="#">(과3)</a> </li>
+			<li> <a href="/jspweb/hrm/hrm.jsp">(과3)인사관리</a> </li>
 		</ul>
 		<ul class="submenu"> <!-- 서브메뉴 -->
 		</ul>
