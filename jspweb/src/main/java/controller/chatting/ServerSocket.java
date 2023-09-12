@@ -50,7 +50,6 @@ public class ServerSocket {
 	@OnMessage	// 매개변수 : 1. 메시지를 보낸 클라이언트소켓(세션) 2.메시지 내용 [문자열]
 	public void onMessage( Session session , String msg ) throws Exception { 
 		System.out.println( "보낸 클라이언트소켓[누가] : " + session +"      보낸 내용[무엇을] : " + msg  );
-		
 			// 2-2 메시지를 보낼 내용 구성. [ 보낸사람 , 보낸내용 ]
 		MsgDto msgDto = null;
 				// - 보낸사람 찾기 [ 보낸 세션 을 이용한 보낸 mid 찾기 ]
