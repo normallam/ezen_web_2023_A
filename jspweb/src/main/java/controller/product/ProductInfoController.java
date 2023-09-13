@@ -35,7 +35,7 @@ public class ProductInfoController extends HttpServlet {
 		// * commons.jar 이용한 업로드 구현 
 		// commons-io.jar ,  commons-fileupload.jar 빌드 필요!!
 		
-		// 1. 저장경로 [ 첨부파일이 저장될 폴더 위치 ] 
+		// 1. 저장경로 [ 첨부파일이 저장될 폴더 위치 ] -> 위치가 여기야!!
 		String uploadPath = request.getServletContext().getRealPath("/product/img");
 		
 		// 2. 파일아이템저장소 객체 : 업로드할 옵션  [ import org.apache.commons.fileupload.FileItem; ]
@@ -69,7 +69,8 @@ public class ProductInfoController extends HttpServlet {
 					item.write( fileUploadPath ); // .write("저장할경로[파일명포함]") 파일 업로드할 경로를 file타입으로 제공 
 					// 7. 업로드 된 파일명을 Map에 저장 [ -DB에 저장할려고  ]
 					i++;
-					imgList.put( i , item.getName()  ); // 저장시 에는 이미지번호가 필요 없음
+					imgList.put( i , item.getName()  ); // 저장시 에는 이미지번호가 필요 없음 
+					
 				}
 			}
 			// FileItem 으로 가져온 데이터들을 각 필드에 맞춰서 제품Dto 에 저장하기 
