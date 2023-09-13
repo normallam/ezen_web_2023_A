@@ -65,7 +65,7 @@ function view(){
 		$.ajax({
       	url : "/jspweb/HrmController",
       	method : "get",
-      	success : r => {
+      	success : r => { console.log("r도착")
 			  let viewbox = document.querySelector('.viewbox');
 			  let html = ``;
 			  let setting = `<tr>
@@ -80,7 +80,7 @@ function view(){
 			 for(let i=0;i<r.length;i++){
 				 html += `<tr class="content">
 				 			<td>${r[i].eno}</td>
-				 			<td><img alt="등록사진" src="img//${r[i].epi}"></td>
+				 			<td><img alt="등록사진" src="img/${r[i].epi}"></td>
 				 			<td>${r[i].ename}</td>
 				 			<td>${r[i].ecall}</td>
 				 			<td>${r[i].egrade}</td>
