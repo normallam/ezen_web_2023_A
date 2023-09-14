@@ -34,7 +34,7 @@
 					<input class ="E_phoneinput" name="ecall" placeholder="전화번호"/>	
 			</div>
 		<div class ="E_picture">
-			<img class="preimg" alt="" src="img/default.webp" name="epi" width="100px">  
+			  
 			<div class="inputbox">
 					직원사진
 					<input onchange="hrmimg( this )" class="hrmimg" name="hrmimg" type="file">

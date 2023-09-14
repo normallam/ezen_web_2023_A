@@ -59,8 +59,8 @@ function regist(){
 }
 
 // 3. 인사조회
-view();
-function view(){
+vview();
+function vview(){
 		
 		$.ajax({
       	url : "/jspweb/HrmController",
