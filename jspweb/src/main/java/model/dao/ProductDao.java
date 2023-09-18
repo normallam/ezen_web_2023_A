@@ -53,6 +53,11 @@ public class ProductDao extends Dao {
 	}
 	
 	// 2. 제품 전체 출력 
+	public List<ProductDto> findByTop(){return null;}
+	public List<ProductDto> findByLating(String east, String west, String south, String north){return null;}
+	public ProductDto findByPno(String east, String west, String south, String north){return null;}
+	public List<ProductDto> findByLating(String east, String west, String south, String north){return null;}
+	
 	
 	// 3. 제품 개별 조회 
 	

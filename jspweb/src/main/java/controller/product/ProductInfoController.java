@@ -121,6 +121,17 @@ public class ProductInfoController extends HttpServlet {
 	}
 	// 2. 제품 조회 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		String type = request.getParameter("type");
+		
+		if(type.equals("findByTop")) {
+			ProductDao.getInstance().findByTop();}
+		else if(type.equals("findByLating")) {ProductDao.getInstance().findByTop();}
+		else if(type.equals("findByPno")) {}
+		else if(type.equals("findByAll")) {}
+
+		response.setCharacterEncoding("application/json;charset=UTF-8");
+	
 	}
 	// 3. 제품 수정 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
