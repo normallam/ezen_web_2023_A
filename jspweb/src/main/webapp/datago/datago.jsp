@@ -16,7 +16,7 @@
          	<div class="detailbox">
          	
          	</div>
-         <div id="map" style="width:500px;height:400px;"></div>
+         <div id="map" style="width:800px;height:400px; align-items: center;"></div>
       	</div>
 		<div>
 			<h6> 안산시 착한가격업소 현황 </h6>

@@ -12,8 +12,10 @@ function findByTop( count ) {
 				jsonArray.forEach((p)=>{
 					let firstImg = Object.values(p.imgList)[0];
 					html += `<div class="col">
-								<div class="card">
-									<img src="/jspweb/product/img/${firstImg}" class="card-img-top" alt="...">
+								<div class="card" style="height:450px; border: none;">
+									<a href="/jspweb/product/view.jsp?pno=${p.pno}">
+										<img src="/jspweb/product/img/${firstImg}" class="card-img-top" alt="...">
+									</a>
 									<div class="card-body">
 										<h5 class="card-title">${p.pname}</h5>
 										<p class="card-text">
