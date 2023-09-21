@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.dao.MemberDao;
 import model.dto.MemberDto;
 
-/**
- * Servlet implementation class MemberFindController
- */
+
 @WebServlet("/MemberFindController")
 public class MemberFindController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

@@ -41,7 +41,7 @@ public class PwishListController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String type = request.getParameter("type");
-		if( type.equals("findByWish") ) {
+		if( type.equals("findByWish") ) { //findByWish와 findByAll를 왜 쓰는가 ->
 			int pno = Integer.parseInt( request.getParameter("pno" ) );
 			int mno = ( (MemberDto)request.getSession().getAttribute("loginDto") ).getMno() ;
 			boolean result = ProductDao.getInstance().getWish(mno, pno);

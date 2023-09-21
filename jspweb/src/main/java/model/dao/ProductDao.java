@@ -120,7 +120,6 @@ public class ProductDao extends Dao {
 		} catch (Exception e) { System.out.println(e); } return null; 
 	}
 	
-	
 	// 3. 제품 찜하기 등록(=찜하기상태가 아닐때=조건에따른 레코드없을때) / 취소(=찜하기상태 일때=조건에따른 레코드있을때)
 	public boolean setWish( int mno , int pno) {
 		try {
@@ -134,7 +133,7 @@ public class ProductDao extends Dao {
 		}catch (Exception e) { e.getStackTrace(); }
 		return false;
 	}
-	// 4. 제품 찜하기 상태 출력
+	// 4. 제품 찜하기 상태 출력// 로그인과 비슷
 	public boolean getWish( int mno , int pno ) {
 		try { String sql ="select * from pwishlist where mno = ? and pno = ?";
 			ps = conn.prepareStatement(sql);
